@@ -24,13 +24,13 @@ This monorepo contains the landing site, UI package(s), and space for future app
 
 Install dependencies from the monorepo root:
 
-```powershell
+```bash
 pnpm install
 ```
 
 ### Run the landing app (marketing site)
 
-```powershell
+```bash
 pnpm --filter @heapfox/landing dev
 ```
 
@@ -38,13 +38,13 @@ The landing app uses Next.js 15 (App Router + Turbopack). It’s configured to s
 
 ### Build all apps
 
-```powershell
+```bash
 pnpm -w build
 ```
 
 ### Start a built app
 
-```powershell
+```bash
 pnpm --filter @heapfox/landing start
 ```
 
@@ -70,7 +70,7 @@ This monorepo is configured for pnpm workspaces and Turborepo.
 ## Roadmap (high-level)
 
 - Dashboard with Markdown/MDX editor and live preview
-- GitHub/GitLab sync for `docs/` folders
+- GitHub/GitLab sync for `docs/` or custom folders
 - Hosting (subdomains, custom domains + SSL)
 - Themes & branding (light/dark, colors, logos, sidebar)
 - Collaboration (roles: admin/editor/viewer)
