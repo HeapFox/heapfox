@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "new-york",
+  "rsc": true,
+  "tsx": true,
+  "tailwind": {
+    "config": "",
+    "css": "@heapfox/ui/styles",
+    "baseColor": "neutral",
+    "cssVariables": true,
+    "prefix": ""
+  },
+  "aliases": {
+    "components": "@/components",
+    "utils": "@heapfox/ui",
+    "ui": "@heapfox/ui",
+    "lib": "@heapfox/ui",
+    "hooks": "@heapfox/ui"
+  },
+  "iconLibrary": "lucide"
+}

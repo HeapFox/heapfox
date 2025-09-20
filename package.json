@@ -1,0 +1,18 @@
+{
+  "name": "heapfox",
+  "private": true,
+  "packageManager": "pnpm@9.0.0",
+  "devDependencies": {
+    "turbo": "latest"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:landing": "turbo run dev --filter=@heapfox/landing",
+    "dev:dashboard": "turbo run dev --filter=dashboard",
+    "build:landing": "turbo build --filter=@heapfox/landing",
+    "build:dashboard": "turbo build --filter=dashboard"
+  }
+}

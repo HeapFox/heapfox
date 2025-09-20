@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+/* Pull in the design tokens, layers, and utilities from the UI package */
+@import "@heapfox/ui/styles";
+
+/* Subtle background grid pattern */
+.subtle-grid {
+	background-image:
+		linear-gradient(to right, color-mix(in oklab, var(--color-foreground) 2%, transparent) 1px, transparent 1px),
+		linear-gradient(to bottom, color-mix(in oklab, var(--color-foreground) 2%, transparent) 1px, transparent 1px);
+	background-size: 24px 24px;
+	background-position: top left;
+}
+
+/* Enable container queries in sections using this class */
+.cq-section {
+	container-type: inline-size;
+}
+
+/* Container query grids */
+.cq-grid-3 {
+	display: grid;
+	grid-template-columns: 1fr;
+}
+@container (min-width: 640px) {
+	.cq-grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+@container (min-width: 1024px) {
+	.cq-grid-3 { grid-template-columns: repeat(3, 1fr); }
+}
+
+.cq-grid-6 {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+@container (min-width: 768px) {
+	.cq-grid-6 { grid-template-columns: repeat(4, 1fr); }
+}
+@container (min-width: 1024px) {
+	.cq-grid-6 { grid-template-columns: repeat(6, 1fr); }
+}
