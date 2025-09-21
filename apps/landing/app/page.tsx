@@ -7,7 +7,6 @@ import { PricingSection } from "@/components/landing/pricing-section"
 import { CTASection } from "@/components/landing/cta-section"
 import { Footer } from "@/components/global/footer"
 import { HowItWorksSection } from "@/components/landing/how-it-works-section"
-import { TrustedBySection } from "@/components/landing/trusted-by-section"
 
 export default function HomePage() {
   return (
@@ -15,7 +14,6 @@ export default function HomePage() {
       <Header />
       <main>
         <HeroSection />
-        {/*<TrustedBySection />*/}
         <HowItWorksSection />
         <FeaturesSection />
         <TemplatesSection />
@@ -27,5 +25,5 @@ export default function HomePage() {
     </div>
   )
 }
-// Ensure this route is statically generated at build time
+
 export const dynamic = "force-static"

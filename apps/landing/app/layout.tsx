@@ -6,7 +6,7 @@ import './globals.css'
 export const metadata: Metadata = {
   title: {
     template: '%s | HeapFox',
-    default: 'HeapFox — Docs without the overhead'
+    default: 'HeapFox - Docs without the overhead'
   },
   description: 'Fully hosted, customizable documentation as a service — built for teams and devs who want beautiful docs without maintaining infra.',
   generator: 'Next.js',
@@ -15,14 +15,14 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'HeapFox — Docs without the overhead',
+    title: 'HeapFox - Docs without the overhead',
     description: 'Fully hosted, customizable documentation as a service. Markdown/MDX, Git sync, themes, collaboration, and instant deploys.',
     type: 'website',
     url: 'https://heapfox.com/',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'HeapFox — Docs without the overhead',
+    title: 'HeapFox - Docs without the overhead',
     description: 'Hosted, customizable docs with Git sync, themes, collaboration, and fast deploys.',
   },
 }

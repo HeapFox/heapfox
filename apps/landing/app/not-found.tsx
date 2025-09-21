@@ -61,40 +61,6 @@ export default function NotFound() {
                 Go back
               </BackButton>
             </div>
-
-            {/* Helpful links */}
-            <div className="border-t border-zinc-200 dark:border-zinc-800 pt-8 animate-in fade-in duration-1000 delay-500">
-              <h3 className="text-lg font-semibold mb-4">Popular pages</h3>
-              <div className="flex flex-wrap justify-center gap-4 text-sm">
-                <Link 
-                  href="/"
-                  className="text-primary hover:text-primary/80 font-medium transition-all duration-200 hover:scale-[1.05]"
-                >
-                  Home
-                </Link>
-                <span className="text-zinc-300">•</span>
-                <Link 
-                  href="#pricing"
-                  className="text-primary hover:text-primary/80 font-medium transition-all duration-200 hover:scale-[1.05]"
-                >
-                  Pricing
-                </Link>
-                <span className="text-zinc-300">•</span>
-                <Link 
-                  href="#features"
-                  className="text-primary hover:text-primary/80 font-medium transition-all duration-200 hover:scale-[1.05]"
-                >
-                  Features
-                </Link>
-                <span className="text-zinc-300">•</span>
-                <Link 
-                  href="#integrations"
-                  className="text-primary hover:text-primary/80 font-medium transition-all duration-200 hover:scale-[1.05]"
-                >
-                  Integrations
-                </Link>
-              </div>
-            </div>
           </div>
         </section>
       </main>
