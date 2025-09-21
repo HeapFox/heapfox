@@ -1,0 +1,27 @@
+# Auto detect text files and normalize line endings to LF in repo
+* text=auto eol=lf
+
+# Treat these as text
+*.js text diff=javascript
+*.ts text diff=javascript
+*.tsx text diff=javascript
+*.json text
+*.css text
+*.md text
+*.yml text
+*.yaml text
+*.mjs text
+
+# Image and binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.svg text eol=lf
+*.ico binary
+*.ttf binary
+*.woff binary
+*.woff2 binary
+
+# Lockfiles should be normalized as text but not merged
+pnpm-lock.yaml -merge
