@@ -1,0 +1,26 @@
+{
+  "name": "@heapfox/api",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "prisma": "prisma"
+  },
+  "dependencies": {
+    "@heapfox/billing": "workspace:*",
+    "@hono/node-server": "^1.13.6",
+    "hono": "^4.6.10",
+    "zod": "^3.23.8",
+    "@paralleldrive/cuid2": "^2.2.2",
+    "dotenv": "^16.4.5",
+    "prisma": "^5.18.0",
+    "@prisma/client": "^5.18.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2",
+    "typescript": "^5.5.4",
+    "@types/node": "^20.14.11"
+  }
+}

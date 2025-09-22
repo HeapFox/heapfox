@@ -10,9 +10,14 @@
     "packages/*"
   ],
   "scripts": {
-    "dev:landing": "turbo run dev --filter=@heapfox/landing",
-    "dev:dashboard": "turbo run dev --filter=dashboard",
-    "build:landing": "turbo build --filter=@heapfox/landing",
-    "build:dashboard": "turbo build --filter=dashboard"
+    "landing:dev": "turbo run dev --filter=@heapfox/landing",
+    "landing:build": "turbo build --filter=@heapfox/landing",
+    "api:dev": "turbo run dev --filter=@heapfox/api",
+    "api:build": "turbo build --filter=@heapfox/api",
+    "api:prisma": "pnpm --filter @heapfox/api run prisma",
+    "cli:dev": "turbo run dev --filter=@heapfox/cli",
+    "cli:build": "turbo build --filter=@heapfox/cli",
+    "dev": "turbo run dev",
+    "build": "turbo build"
   }
 }

@@ -1,0 +1,107 @@
+// Prisma schema for HeapFox API (MVP)
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  projects  Project[]
+}
+
+model Project {
+  id        String   @id @default(cuid())
+  slug      String   @unique
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  owner   User   @relation(fields: [ownerId], references: [id])
+  ownerId String
+
+  token   String   @unique // project-scoped token for CLI auth (MVP)
+
+  domains Domain[]
+  builds  Build[]
+  subscription Subscription?
+}
+
+model Domain {
+  id        String   @id @default(cuid())
+  hostname  String   @unique
+  isPrimary Boolean  @default(false)
+  project   Project  @relation(fields: [projectId], references: [id])
+  projectId String
+}
+
+model Build {
+  id        String   @id @default(cuid())
+  project   Project  @relation(fields: [projectId], references: [id])
+  projectId String
+  status    BuildStatus @default(PENDING)
+  source    String? // commit SHA or source hint
+  createdAt DateTime @default(now())
+
+  pages Page[]
+}
+
+model Page {
+  id        String  @id @default(cuid())
+  build     Build   @relation(fields: [buildId], references: [id])
+  buildId   String
+  path      String
+  title     String?
+  content   String  // HTML or MDX stored for MVP
+  headings  Json?
+  updatedAt DateTime @updatedAt
+
+  @@unique([buildId, path])
+}
+
+enum BuildStatus {
+  PENDING
+  PROCESSING
+  COMPLETE
+  FAILED
+}
+
+model Subscription {
+  id              String           @id @default(cuid())
+  project         Project          @relation(fields: [projectId], references: [id])
+  projectId       String           @unique
+  provider        BillingProvider
+  providerCustomerId    String
+  providerSubscriptionId String
+  plan            Plan
+  status          SubscriptionStatus
+  currentPeriodEnd DateTime?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+enum BillingProvider {
+  STRIPE
+}
+
+enum SubscriptionStatus {
+  TRIALING
+  ACTIVE
+  PAST_DUE
+  CANCELED
+}
+
+enum Plan {
+  free
+  pro
+  team
+}

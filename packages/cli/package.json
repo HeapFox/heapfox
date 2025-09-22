@@ -1,0 +1,26 @@
+{
+  "name": "@heapfox/cli",
+  "version": "0.0.1",
+  "private": false,
+  "type": "module",
+  "bin": {
+    "heapfox": "dist/index.js"
+  },
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsup src/index.ts --format esm,cjs --dts --out-dir dist",
+    "start": "node dist/index.js --help"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "dotenv": "^16.4.5",
+    "node-fetch": "^3.3.2",
+    "tar": "^7.4.3",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "tsup": "^8.1.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.5.4"
+  }
+}

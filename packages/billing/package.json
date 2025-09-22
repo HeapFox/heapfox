@@ -1,0 +1,22 @@
+{
+  "name": "@heapfox/billing",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --out-dir dist"
+  },
+  "dependencies": {
+    "stripe": "^16.6.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "tsup": "^8.1.0",
+    "typescript": "^5.5.4",
+    "@types/node": "^20.14.11"
+  }
+}

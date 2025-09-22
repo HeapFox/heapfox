@@ -34,6 +34,7 @@ coverage/
 **/.next/
 **/.next/cache/
 **/.next/static/
+**/next-env.d.ts
 
 # --- Turborepo ---
 .turbo/
